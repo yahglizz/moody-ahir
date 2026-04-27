@@ -715,134 +715,20 @@
     }
 
     /* ===== BOOKING SECTION ===== */
-    #booking {
-      background: var(--bg-primary);
-    }
+    #booking { background: var(--bg-primary); }
 
-    .booking-form {
-      max-width: 560px;
-      margin: 0 auto;
-      background: var(--white-soft);
-      padding: 3rem 2.5rem;
-      border: 1px solid var(--border);
-      border-radius: 4px;
-    }
-
-    .form-group {
-      margin-bottom: 1.5rem;
-    }
-
-    .form-group label {
-      display: block;
-      font-size: 0.72rem;
-      font-weight: 600;
-      letter-spacing: 2.5px;
-      text-transform: uppercase;
-      color: var(--text-secondary);
-      margin-bottom: 0.5rem;
-    }
-
-    .form-group input,
-    .form-group select,
-    .form-group textarea {
-      width: 100%;
-      padding: 0.9rem 1rem;
-      font-family: var(--font-body);
-      font-size: 0.92rem;
-      color: var(--text-primary);
-      background: var(--bg-primary);
-      border: 1px solid var(--border);
-      border-radius: 2px;
-      outline: none;
-      transition: border-color 0.3s ease;
-      -webkit-appearance: none;
-      appearance: none;
-    }
-
-    .form-group input:focus,
-    .form-group select:focus,
-    .form-group textarea:focus {
-      border-color: var(--accent);
-    }
-
-    .form-group input::placeholder {
-      color: var(--text-secondary);
-      opacity: 0.5;
-    }
-
-    .form-group select {
-      cursor: pointer;
-      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%238B7355' stroke-width='1.5' fill='none'/%3E%3C/svg%3E");
-      background-repeat: no-repeat;
-      background-position: right 1rem center;
-      padding-right: 2.5rem;
-    }
-
-    .form-row {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 1rem;
-    }
-
-    /* ===== BOOKING FORM — REDESIGNED ===== */
-    .booking-form {
-      overflow: hidden;
-      padding: 0;
-      box-shadow: 0 20px 60px rgba(92, 64, 51, 0.13);
-    }
-
-    .booking-form-header {
-      background: linear-gradient(135deg, #5C4033 0%, #3D2B1F 100%);
-      padding: 2.4rem 2.5rem 2rem;
-      text-align: center;
-      position: relative;
-    }
-
-    .booking-form-header::after {
-      content: '';
-      position: absolute;
-      bottom: 0;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 40px;
-      height: 2px;
-      background: var(--accent-highlight);
-    }
-
-    .booking-form-eyebrow {
-      font-family: var(--font-body);
-      font-size: 0.68rem;
-      font-weight: 600;
-      letter-spacing: 4px;
-      text-transform: uppercase;
-      color: var(--accent-highlight);
-      margin-bottom: 0.5rem;
-    }
-
-    .booking-form-title {
-      font-family: var(--font-heading);
-      font-size: 1.7rem;
-      font-weight: 400;
-      color: var(--white-soft);
-      margin: 0;
-      line-height: 1.25;
-    }
-
-    .booking-form-title em {
-      font-style: italic;
-      color: var(--accent-highlight);
-    }
-
-    .booking-form-body {
-      padding: 2.5rem 2.5rem 2rem;
-    }
-
+    .form-group { margin-bottom: 1.2rem; }
     .form-group label {
       display: flex;
       align-items: center;
-      gap: 0.4rem;
+      gap: 0.35rem;
+      font-size: 0.68rem;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--text-secondary);
+      margin-bottom: 0.45rem;
     }
-
     .form-group label::before {
       content: '';
       display: inline-block;
@@ -852,300 +738,502 @@
       border-radius: 50%;
       flex-shrink: 0;
     }
-
     .form-group input,
     .form-group select,
     .form-group textarea {
+      width: 100%;
+      padding: 0.75rem 0.9rem;
+      font-family: var(--font-body);
+      font-size: 0.9rem;
+      color: var(--text-primary);
+      background: var(--bg-primary);
+      border: 1px solid var(--border);
       border-left: 3px solid transparent;
-      transition: border-color 0.3s ease, background 0.3s ease, box-shadow 0.3s ease;
+      border-radius: 3px;
+      outline: none;
+      transition: all 0.25s ease;
+      -webkit-appearance: none;
+      appearance: none;
     }
-
     .form-group input:focus,
     .form-group select:focus,
     .form-group textarea:focus {
       border-color: var(--accent);
       border-left-color: var(--accent);
       background: var(--white-soft);
-      box-shadow: 0 4px 16px rgba(184, 134, 107, 0.1);
+      box-shadow: 0 3px 12px rgba(184,134,107,0.1);
     }
+    .form-group input::placeholder { color: var(--text-secondary); opacity: 0.5; }
+    .form-group select {
+      cursor: pointer;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%238B7355' stroke-width='1.5' fill='none'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: right 1rem center;
+      padding-right: 2.5rem;
+    }
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 0.8rem; }
 
-    .deposit-warning-box {
-      background: linear-gradient(135deg, #3D2B1F 0%, #5C4033 100%);
-      border-radius: 0;
-      padding: 1.4rem 2.5rem;
-      margin: 0 -0px;
+    /* ===== BOOKING CARD ===== */
+    .booking-card {
+      max-width: 720px;
+      margin: 0 auto;
+      background: var(--white-soft);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 24px 64px rgba(92,64,51,0.14);
+    }
+    .booking-card-header {
+      background: linear-gradient(135deg, #5C4033 0%, #3D2B1F 100%);
+      padding: 1.4rem 1.8rem;
+    }
+    .booking-card-header .bch-eyebrow {
+      font-family: var(--font-body);
+      font-size: 0.62rem;
+      font-weight: 700;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      color: var(--accent-highlight);
+      margin-bottom: 0.25rem;
+    }
+    .booking-card-header h3 {
+      font-family: var(--font-heading);
+      font-size: 1.35rem;
+      font-weight: 400;
+      color: var(--white-soft);
+      margin: 0;
+      line-height: 1.25;
+    }
+    .booking-card-header h3 em { font-style: italic; color: var(--accent-highlight); }
+
+    .booking-card-body {
       display: flex;
-      align-items: flex-start;
-      gap: 1rem;
+      min-height: 380px;
     }
-
-    .deposit-warning-box .dw-icon {
-      font-size: 1.4rem;
+    .booking-cal-col {
+      flex: 1;
+      padding: 1.4rem;
+      border-right: 1px solid var(--border);
+      min-width: 0;
+    }
+    .booking-slots-col {
+      width: 168px;
       flex-shrink: 0;
-      margin-top: 0.1rem;
+      display: flex;
+      flex-direction: column;
     }
-
-    .deposit-warning-box .dw-text h4 {
+    .booking-slots-header {
+      padding: 0.75rem 0.9rem;
+      background: var(--bg-alt);
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.3rem;
+    }
+    .bsh-date {
       font-family: var(--font-body);
       font-size: 0.72rem;
+      font-weight: 600;
+      color: var(--text-primary);
+      line-height: 1.3;
+    }
+    .bsh-tz {
+      font-size: 0.55rem;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: var(--text-secondary);
+      background: var(--bg-primary);
+      padding: 0.15rem 0.35rem;
+      border-radius: 2px;
+      flex-shrink: 0;
+    }
+    .booking-slots-scroll {
+      flex: 1;
+      overflow-y: auto;
+      padding: 0.5rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.28rem;
+      max-height: 360px;
+    }
+    .booking-slots-scroll::-webkit-scrollbar { width: 3px; }
+    .booking-slots-scroll::-webkit-scrollbar-track { background: var(--bg-alt); }
+    .booking-slots-scroll::-webkit-scrollbar-thumb { background: var(--border); border-radius: 2px; }
+
+    .slots-empty-msg {
+      padding: 2.5rem 0.5rem;
+      text-align: center;
+      font-size: 0.7rem;
+      color: var(--text-secondary);
+      font-style: italic;
+      line-height: 1.6;
+    }
+    .slots-sep {
+      font-size: 0.55rem;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--text-secondary);
+      padding: 0.5rem 0 0.25rem;
+      border-bottom: 1px solid var(--border);
+      margin-bottom: 0.25rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .slots-sep-fee {
+      font-weight: 400;
+      letter-spacing: 0;
+      text-transform: none;
+      color: var(--accent);
+    }
+    .slot-btn {
+      width: 100%;
+      padding: 0.52rem 0.5rem;
+      font-family: var(--font-body);
+      font-size: 0.76rem;
+      font-weight: 500;
+      text-align: center;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: all 0.17s ease;
+      border: 1px solid var(--border);
+      background: var(--white-soft);
+      color: var(--text-primary);
+      white-space: nowrap;
+    }
+    .slot-btn:hover:not(:disabled) {
+      background: var(--bg-alt);
+      border-color: var(--accent);
+      color: var(--accent);
+    }
+    .slot-btn.slot-early { border-color: rgba(212,165,116,0.4); color: #9A6B3C; background: rgba(212,165,116,0.06); }
+    .slot-btn.slot-early:hover:not(:disabled) { background: rgba(212,165,116,0.15); border-color: var(--accent-highlight); }
+    .slot-btn.slot-late  { color: var(--text-secondary); }
+    .slot-btn.slot-selected {
+      background: var(--accent) !important;
+      border-color: var(--accent) !important;
+      color: var(--white-soft) !important;
+      font-weight: 700;
+      box-shadow: 0 3px 10px rgba(184,134,107,0.35);
+    }
+    .slot-btn.slot-booked {
+      background: var(--bg-alt) !important;
+      border-color: var(--border) !important;
+      color: #C8B9AC !important;
+      cursor: not-allowed !important;
+      text-decoration: line-through;
+    }
+    .slots-loading-msg {
+      padding: 2rem 0.5rem;
+      text-align: center;
+      font-size: 0.7rem;
+      color: var(--text-secondary);
+      font-style: italic;
+    }
+
+    /* Booking card footer */
+    .booking-card-footer {
+      padding: 0.9rem 1.4rem;
+      border-top: 1px solid var(--border);
+      background: var(--bg-alt);
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+    .bcf-info {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      flex: 1;
+      font-size: 0.82rem;
+      color: var(--text-secondary);
+      min-width: 0;
+    }
+    .bcf-check {
+      width: 18px;
+      height: 18px;
+      border-radius: 50%;
+      background: var(--accent);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    .bcf-check svg { width: 10px; height: 10px; stroke: white; }
+    .bcf-info strong { color: var(--text-primary); font-weight: 600; }
+
+    /* Calendar */
+    .cal-wrapper {
+      border: 1px solid var(--border);
+      border-radius: 5px;
+      overflow: hidden;
+      margin-bottom: 0;
+      background: var(--bg-primary);
+    }
+    .cal-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0.65rem 0.8rem;
+      background: var(--bg-alt);
+      border-bottom: 1px solid var(--border);
+    }
+    .cal-nav {
+      width: 26px;
+      height: 26px;
+      background: none;
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      cursor: pointer;
+      color: var(--text-secondary);
+      font-size: 1rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.2s ease;
+      line-height: 1;
+      padding: 0;
+    }
+    .cal-nav:hover { background: var(--accent); border-color: var(--accent); color: var(--white-soft); }
+    .cal-month-lbl {
+      font-family: var(--font-heading);
+      font-size: 0.88rem;
+      font-weight: 500;
+      color: var(--text-primary);
+    }
+    .cal-weekdays {
+      display: grid;
+      grid-template-columns: repeat(7, 1fr);
+      background: var(--bg-alt);
+      border-bottom: 1px solid var(--border);
+    }
+    .cal-wd {
+      text-align: center;
+      padding: 0.35rem 0;
+      font-size: 0.58rem;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      color: var(--text-secondary);
+    }
+    .cal-grid { display: grid; grid-template-columns: repeat(7, 1fr); }
+    .cal-day {
+      aspect-ratio: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.78rem;
+      color: var(--text-primary);
+      cursor: pointer;
+      transition: all 0.16s ease;
+      border: 1px solid transparent;
+      position: relative;
+      user-select: none;
+      border-radius: 4px;
+      margin: 1px;
+    }
+    .cal-day:hover:not(.cal-day-disabled):not(.cal-day-empty) { background: var(--bg-alt); border-color: var(--border); }
+    .cal-day-today { font-weight: 700; color: var(--accent); }
+    .cal-day-selected {
+      background: var(--accent) !important;
+      color: var(--white-soft) !important;
+      border-color: var(--accent) !important;
+      font-weight: 600;
+    }
+    .cal-day-disabled { color: #D5C8BD; cursor: not-allowed; }
+    .cal-day-empty { cursor: default; }
+    .cal-day-has-booking::after {
+      content: '';
+      position: absolute;
+      bottom: 2px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 3px;
+      height: 3px;
+      border-radius: 50%;
+      background: var(--accent-highlight);
+    }
+
+    /* Contact details section (slides in after time picked) */
+    .contact-section {
+      max-width: 720px;
+      margin: 1.2rem auto 0;
+      display: none;
+    }
+    .contact-section.active { display: block; animation: fadeUp 0.3s ease forwards; }
+    .contact-inner {
+      background: var(--white-soft);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 1.6rem 1.8rem;
+      box-shadow: 0 8px 28px rgba(92,64,51,0.07);
+    }
+    .contact-inner .contact-lbl {
+      font-size: 0.65rem;
+      font-weight: 700;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--text-secondary);
+      margin-bottom: 1.1rem;
+      display: flex;
+      align-items: center;
+      gap: 0.35rem;
+    }
+    .contact-inner .contact-lbl::before {
+      content: '';
+      display: inline-block;
+      width: 4px;
+      height: 4px;
+      border-radius: 50%;
+      background: var(--accent);
+    }
+
+    /* Deposit warning */
+    .deposit-warning-box {
+      max-width: 720px;
+      margin: 1rem auto 0;
+      background: linear-gradient(135deg, #3D2B1F 0%, #5C4033 100%);
+      border-radius: 6px;
+      padding: 1.2rem 1.6rem;
+      display: flex;
+      align-items: flex-start;
+      gap: 0.9rem;
+    }
+    .deposit-warning-box .dw-icon { font-size: 1.3rem; flex-shrink: 0; margin-top: 0.1rem; }
+    .deposit-warning-box .dw-text h4 {
+      font-size: 0.66rem;
       font-weight: 700;
       letter-spacing: 2.5px;
       text-transform: uppercase;
       color: var(--accent-highlight);
-      margin-bottom: 0.3rem;
+      margin-bottom: 0.25rem;
     }
+    .deposit-warning-box .dw-text p { font-size: 0.8rem; color: rgba(255,253,249,0.75); line-height: 1.5; margin: 0; }
+    .deposit-warning-box .dw-text p strong { color: var(--white-soft); }
 
-    .deposit-warning-box .dw-text p {
-      font-size: 0.82rem;
-      color: rgba(255, 253, 249, 0.75);
-      line-height: 1.6;
-      margin: 0;
-    }
-
-    .deposit-warning-box .dw-text p strong {
-      color: var(--white-soft);
-      font-weight: 600;
-    }
-
-    .btn-submit {
-      position: relative;
-      overflow: hidden;
-    }
-
-    .btn-submit::after {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: -100%;
-      width: 60%;
-      height: 100%;
-      background: linear-gradient(90deg, transparent, rgba(255,253,249,0.12), transparent);
-      transition: left 0.55s ease;
-    }
-
-    .btn-submit:not(:disabled):hover::after {
-      left: 140%;
-    }
-
-    .btn-submit:disabled {
-      opacity: 0.65;
-      cursor: not-allowed;
-    }
-
-    /* ===== SUCCESS SCREEN — REDESIGNED ===== */
-    .form-success {
-      display: none;
-      background: var(--white-soft);
-      border: 1px solid var(--border);
-      border-radius: 4px;
-      overflow: hidden;
-      box-shadow: 0 20px 60px rgba(92, 64, 51, 0.13);
-      max-width: 560px;
-      margin: 0 auto;
-    }
-
-    .form-success.active {
-      display: block;
-    }
-
-    .success-header {
-      background: linear-gradient(135deg, #5C4033 0%, #3D2B1F 100%);
-      padding: 2.5rem 2rem;
-      text-align: center;
-    }
-
-    .success-check-ring {
-      width: 68px;
-      height: 68px;
-      border-radius: 50%;
-      border: 2px solid rgba(212, 165, 116, 0.4);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin: 0 auto 1.2rem;
-      position: relative;
-      animation: ringPulse 2s ease-in-out infinite;
-    }
-
-    .success-check-ring::before {
-      content: '';
-      position: absolute;
-      inset: -6px;
-      border-radius: 50%;
-      border: 1px solid rgba(212, 165, 116, 0.15);
-    }
-
-    @keyframes ringPulse {
-      0%, 100% { box-shadow: 0 0 0 0 rgba(212, 165, 116, 0.2); }
-      50%       { box-shadow: 0 0 0 10px rgba(212, 165, 116, 0); }
-    }
-
-    .success-check-ring svg {
-      width: 30px;
-      height: 30px;
-      stroke: var(--accent-highlight);
-      stroke-dasharray: 30;
-      stroke-dashoffset: 30;
-      animation: drawCheck 0.5s ease 0.2s forwards;
-    }
-
-    @keyframes drawCheck {
-      to { stroke-dashoffset: 0; }
-    }
-
-    .success-header h3 {
-      font-family: var(--font-heading);
-      font-size: 1.6rem;
-      font-weight: 400;
-      color: var(--white-soft);
-      margin-bottom: 0.4rem;
-    }
-
-    .success-header p {
-      font-size: 0.82rem;
-      color: rgba(255, 253, 249, 0.6);
-      letter-spacing: 0.5px;
-    }
-
-    .success-body {
-      padding: 2rem 2.5rem;
-    }
-
-    .success-body > p {
-      font-size: 0.9rem;
-      color: var(--text-secondary);
-      text-align: center;
-      margin-bottom: 1.8rem;
-      line-height: 1.7;
-    }
-
-    .success-deposit-card {
-      background: linear-gradient(135deg, #3D2B1F 0%, #5C4033 100%);
-      border-radius: 4px;
-      overflow: hidden;
-    }
-
-    .success-deposit-card-header {
-      padding: 1rem 1.5rem;
-      border-bottom: 1px solid rgba(255,253,249,0.08);
-      display: flex;
-      align-items: center;
-      gap: 0.6rem;
-    }
-
-    .success-deposit-card-header span {
-      font-family: var(--font-body);
-      font-size: 0.68rem;
-      font-weight: 700;
-      letter-spacing: 3px;
-      text-transform: uppercase;
-      color: var(--accent-highlight);
-    }
-
-    .success-steps {
-      padding: 1.2rem 1.5rem;
-      display: flex;
-      flex-direction: column;
-      gap: 1rem;
-    }
-
-    .success-step {
-      display: flex;
-      align-items: flex-start;
-      gap: 1rem;
-    }
-
-    .success-step-num {
-      width: 26px;
-      height: 26px;
-      border-radius: 50%;
-      background: rgba(212, 165, 116, 0.2);
-      border: 1px solid rgba(212, 165, 116, 0.4);
-      color: var(--accent-highlight);
-      font-family: var(--font-heading);
-      font-size: 0.8rem;
-      font-weight: 600;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-shrink: 0;
-      margin-top: 0.1rem;
-    }
-
-    .success-step-text {
-      font-size: 0.86rem;
-      color: rgba(255, 253, 249, 0.8);
-      line-height: 1.5;
-    }
-
-    .success-step-text strong {
-      color: var(--white-soft);
-    }
-
-    .success-cashapp {
-      margin: 0 1.5rem 1.5rem;
-      background: rgba(255, 253, 249, 0.06);
-      border: 1px solid rgba(212, 165, 116, 0.25);
-      border-radius: 3px;
-      padding: 0.9rem 1.2rem;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-    }
-
-    .success-cashapp-label {
-      font-size: 0.68rem;
-      font-weight: 600;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-      color: rgba(255, 253, 249, 0.45);
-    }
-
-    .success-cashapp-handle {
-      font-family: var(--font-heading);
-      font-size: 1.1rem;
-      color: var(--accent-highlight);
-      font-weight: 500;
-    }
-
-    .success-no-deposit {
-      padding: 0.9rem 1.5rem;
-      border-top: 1px solid rgba(255, 253, 249, 0.06);
-      text-align: center;
-      font-size: 0.72rem;
-      font-weight: 700;
-      letter-spacing: 1.5px;
-      text-transform: uppercase;
-      color: rgba(212, 165, 116, 0.7);
-    }
-
-    @media (max-width: 768px) {
-      .booking-form-body { padding: 1.8rem 1.5rem 1.5rem; }
-      .booking-form-header { padding: 2rem 1.5rem 1.8rem; }
-      .deposit-warning-box { padding: 1.2rem 1.5rem; }
-      .success-body { padding: 1.5rem; }
-    }
-
+    /* Submit button */
     .btn-submit {
       width: 100%;
-      padding: 1.1rem;
-      margin-top: 0.5rem;
+      padding: 1rem;
+      margin-top: 0.8rem;
       font-family: var(--font-body);
-      font-size: 0.78rem;
-      font-weight: 600;
+      font-size: 0.76rem;
+      font-weight: 700;
       letter-spacing: 3px;
       text-transform: uppercase;
       background: var(--accent);
       color: var(--white-soft);
       border: none;
-      border-radius: 2px;
+      border-radius: 5px;
       cursor: pointer;
-      transition: all 0.35s ease;
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
     }
+    .btn-submit::after {
+      content: '';
+      position: absolute;
+      top: 0; left: -100%;
+      width: 60%; height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255,253,249,0.12), transparent);
+      transition: left 0.55s ease;
+    }
+    .btn-submit:not(:disabled):hover { background: var(--text-primary); box-shadow: 0 8px 24px rgba(92,64,51,0.22); }
+    .btn-submit:not(:disabled):hover::after { left: 140%; }
+    .btn-submit:disabled { opacity: 0.6; cursor: not-allowed; }
 
-    .btn-submit:hover {
-      background: var(--text-primary);
-      box-shadow: 0 8px 25px rgba(92, 64, 51, 0.2);
+    /* Success screen */
+    .form-success {
+      display: none;
+      max-width: 720px;
+      margin: 0 auto;
+      background: var(--white-soft);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 24px 64px rgba(92,64,51,0.13);
+    }
+    .form-success.active { display: block; }
+    .success-header {
+      background: linear-gradient(135deg, #5C4033 0%, #3D2B1F 100%);
+      padding: 2.2rem 2rem;
+      text-align: center;
+    }
+    .success-check-ring {
+      width: 64px; height: 64px;
+      border-radius: 50%;
+      border: 2px solid rgba(212,165,116,0.4);
+      display: flex; align-items: center; justify-content: center;
+      margin: 0 auto 1.1rem;
+      position: relative;
+      animation: ringPulse 2s ease-in-out infinite;
+    }
+    .success-check-ring::before {
+      content: '';
+      position: absolute;
+      inset: -6px;
+      border-radius: 50%;
+      border: 1px solid rgba(212,165,116,0.15);
+    }
+    @keyframes ringPulse {
+      0%, 100% { box-shadow: 0 0 0 0 rgba(212,165,116,0.2); }
+      50%       { box-shadow: 0 0 0 10px rgba(212,165,116,0); }
+    }
+    .success-check-ring svg {
+      width: 28px; height: 28px;
+      stroke: var(--accent-highlight);
+      stroke-dasharray: 30;
+      stroke-dashoffset: 30;
+      animation: drawCheck 0.5s ease 0.2s forwards;
+    }
+    @keyframes drawCheck { to { stroke-dashoffset: 0; } }
+    .success-header h3 { font-family: var(--font-heading); font-size: 1.5rem; font-weight: 400; color: var(--white-soft); margin-bottom: 0.35rem; }
+    .success-header p { font-size: 0.8rem; color: rgba(255,253,249,0.6); }
+    .success-body { padding: 1.8rem 2rem; }
+    .success-body > p { font-size: 0.88rem; color: var(--text-secondary); text-align: center; margin-bottom: 1.6rem; line-height: 1.7; }
+    .success-deposit-card { background: linear-gradient(135deg, #3D2B1F 0%, #5C4033 100%); border-radius: 6px; overflow: hidden; }
+    .success-deposit-card-header { padding: 0.9rem 1.4rem; border-bottom: 1px solid rgba(255,253,249,0.08); }
+    .success-deposit-card-header span { font-size: 0.65rem; font-weight: 700; letter-spacing: 3px; text-transform: uppercase; color: var(--accent-highlight); }
+    .success-steps { padding: 1.1rem 1.4rem; display: flex; flex-direction: column; gap: 0.9rem; }
+    .success-step { display: flex; align-items: flex-start; gap: 0.9rem; }
+    .success-step-num {
+      width: 24px; height: 24px;
+      border-radius: 50%;
+      background: rgba(212,165,116,0.2);
+      border: 1px solid rgba(212,165,116,0.4);
+      color: var(--accent-highlight);
+      font-size: 0.75rem; font-weight: 600;
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0; margin-top: 0.1rem;
+    }
+    .success-step-text { font-size: 0.83rem; color: rgba(255,253,249,0.8); line-height: 1.5; }
+    .success-step-text strong { color: var(--white-soft); }
+    .success-cashapp {
+      margin: 0 1.4rem 1.4rem;
+      background: rgba(255,253,249,0.06);
+      border: 1px solid rgba(212,165,116,0.25);
+      border-radius: 3px;
+      padding: 0.8rem 1.1rem;
+      display: flex; align-items: center; justify-content: space-between;
+    }
+    .success-cashapp-label { font-size: 0.65rem; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; color: rgba(255,253,249,0.45); }
+    .success-cashapp-handle { font-family: var(--font-heading); font-size: 1.05rem; color: var(--accent-highlight); font-weight: 500; }
+    .success-no-deposit { padding: 0.8rem 1.4rem; border-top: 1px solid rgba(255,253,249,0.06); text-align: center; font-size: 0.68rem; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: rgba(212,165,116,0.7); }
+
+    @media (max-width: 600px) {
+      .booking-card-body { flex-direction: column; }
+      .booking-cal-col { border-right: none; border-bottom: 1px solid var(--border); padding: 1rem; }
+      .booking-slots-col { width: 100%; }
+      .booking-slots-scroll { flex-direction: row; flex-wrap: wrap; max-height: 180px; gap: 0.3rem; }
+      .slot-btn { width: auto; flex: 0 0 calc(33.33% - 0.25rem); font-size: 0.7rem; }
+      .slots-sep { width: 100%; }
+      .booking-card-footer { flex-direction: column; align-items: flex-start; gap: 0.7rem; }
+      .success-body { padding: 1.4rem; }
+      .form-row { grid-template-columns: 1fr; }
     }
 
     /* ===== CTA SECTION ===== */
@@ -1770,78 +1858,114 @@
     <h2 class="section-title reveal">Book Your Session</h2>
     <div class="section-divider reveal"></div>
 
-    <form class="booking-form reveal" id="bookingForm">
+    <form id="bookingForm" class="reveal">
       <!-- Web3Forms hidden config -->
       <input type="hidden" name="access_key" value="b3c2b399-4445-4151-8f30-ee8e3db32df8">
       <input type="hidden" name="subject" value="New Booking Request — StylezByZP">
       <input type="hidden" name="from_name" value="StylezByZP Booking System">
       <input type="hidden" name="botcheck" style="display:none;">
+      <input type="hidden" name="date" id="date">
+      <input type="hidden" name="time" id="time">
 
-      <!-- Form header -->
-      <div class="booking-form-header">
-        <p class="booking-form-eyebrow">Reserve Your Spot</p>
-        <h3 class="booking-form-title">Book <em>Your Session</em></h3>
+      <!-- Main booking card -->
+      <div class="booking-card">
+        <div class="booking-card-header">
+          <p class="bch-eyebrow">Reserve Your Spot</p>
+          <h3>Book <em>Your Session</em></h3>
+        </div>
+
+        <div class="booking-card-body">
+          <!-- Left: service selector + calendar -->
+          <div class="booking-cal-col">
+            <div class="form-group">
+              <label for="service">Service</label>
+              <select id="service" name="service" required>
+                <option value="" disabled selected>Select a service</option>
+                <optgroup label="Quick Weaves">
+                  <option value="Basic Quick-Weave - $100">Basic Quick-Weave — $100</option>
+                  <option value="Blunt Cut Bob - $120">Blunt Cut Bob — $120</option>
+                  <option value="Mid Half Up Half Down - $120+">Mid Half Up Half Down — $120+</option>
+                  <option value="Flip Over - $110">Flip Over — $110</option>
+                  <option value="No Part Ponytail - $85">No Part Ponytail — $85</option>
+                  <option value="Bun Hairstyles - $100+">Bun Hairstyles — $100+</option>
+                </optgroup>
+                <optgroup label="Knotless Braids">
+                  <option value="Large Knotless - $100">Large Knotless — $100</option>
+                  <option value="Med Knotless - $150">Med Knotless — $150</option>
+                  <option value="Small Knotless - $190">Small Knotless — $190</option>
+                  <option value="Stitch Braids + Quick Weave - $145+">Stitch Braids + Quick Weave — $145+</option>
+                </optgroup>
+                <optgroup label="Extras">
+                  <option value="Curls - $15">Curls — $15</option>
+                  <option value="Crimps - $25">Crimps — $25</option>
+                  <option value="Wash + Blow Dry - $15">Wash + Blow Dry — $15</option>
+                  <option value="Layers - $10">Layers — $10</option>
+                </optgroup>
+              </select>
+            </div>
+
+            <div class="cal-wrapper">
+              <div class="cal-header">
+                <button type="button" class="cal-nav" id="calPrev">&#8249;</button>
+                <span class="cal-month-lbl" id="calMonthLabel"></span>
+                <button type="button" class="cal-nav" id="calNext">&#8250;</button>
+              </div>
+              <div class="cal-weekdays">
+                <div class="cal-wd">Su</div>
+                <div class="cal-wd">Mo</div>
+                <div class="cal-wd">Tu</div>
+                <div class="cal-wd">We</div>
+                <div class="cal-wd">Th</div>
+                <div class="cal-wd">Fr</div>
+                <div class="cal-wd">Sa</div>
+              </div>
+              <div class="cal-grid" id="calGrid"></div>
+            </div>
+          </div>
+
+          <!-- Right: scrollable time slots -->
+          <div class="booking-slots-col">
+            <div class="booking-slots-header">
+              <span class="bsh-date" id="bshDate">Select a date</span>
+              <span class="bsh-tz">EST</span>
+            </div>
+            <div class="booking-slots-scroll" id="slotsPanel">
+              <div class="slots-empty-msg">← Pick a date to see available times</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Footer: selected appointment summary -->
+        <div class="booking-card-footer">
+          <div class="bcf-info" id="bcfInfo">
+            <span id="bcfText">Select a date and time to continue.</span>
+          </div>
+        </div>
       </div>
 
-      <!-- Form fields -->
-      <div class="booking-form-body">
-        <div class="form-group">
-          <label for="name">Full Name</label>
-          <input type="text" id="name" name="name" placeholder="Your name" required>
-        </div>
-
-        <div class="form-group">
-          <label for="phone">Phone Number</label>
-          <input type="tel" id="phone" name="phone" placeholder="(000) 000-0000" required>
-        </div>
-
-        <div class="form-group">
-          <label for="email">Your Email</label>
-          <input type="email" id="email" name="email" placeholder="your@email.com" required>
-        </div>
-
-        <div class="form-group">
-          <label for="service">Service</label>
-          <select id="service" name="service" required>
-            <option value="" disabled selected>Select a service</option>
-            <optgroup label="Quick Weaves">
-              <option value="Basic Quick-Weave - $100">Basic Quick-Weave — $100</option>
-              <option value="Blunt Cut Bob - $120">Blunt Cut Bob — $120</option>
-              <option value="Mid Half Up Half Down - $120+">Mid Half Up Half Down — $120+</option>
-              <option value="Flip Over - $110">Flip Over — $110</option>
-              <option value="No Part Ponytail - $85">No Part Ponytail — $85</option>
-              <option value="Bun Hairstyles - $100+">Bun Hairstyles — $100+</option>
-            </optgroup>
-            <optgroup label="Knotless Braids">
-              <option value="Large Knotless - $100">Large Knotless — $100</option>
-              <option value="Med Knotless - $150">Med Knotless — $150</option>
-              <option value="Small Knotless - $190">Small Knotless — $190</option>
-              <option value="Stitch Braids + Quick Weave - $145+">Stitch Braids + Quick Weave — $145+</option>
-            </optgroup>
-            <optgroup label="Extras">
-              <option value="Curls - $15">Curls — $15</option>
-              <option value="Crimps - $25">Crimps — $25</option>
-              <option value="Wash + Blow Dry - $15">Wash + Blow Dry — $15</option>
-              <option value="Layers - $10">Layers — $10</option>
-            </optgroup>
-          </select>
-        </div>
-
-        <div class="form-row">
-          <div class="form-group">
-            <label for="date">Preferred Date</label>
-            <input type="date" id="date" name="date" required>
+      <!-- Contact details (appear after time is picked) -->
+      <div class="contact-section" id="contactSection">
+        <div class="contact-inner">
+          <p class="contact-lbl">Your Details</p>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="name">Full Name</label>
+              <input type="text" id="name" name="name" placeholder="Your name" required>
+            </div>
+            <div class="form-group">
+              <label for="phone">Phone Number</label>
+              <input type="tel" id="phone" name="phone" placeholder="(000) 000-0000" required>
+            </div>
           </div>
           <div class="form-group">
-            <label for="time">Preferred Time</label>
-            <input type="time" id="time" name="time" required>
+            <label for="email">Your Email</label>
+            <input type="email" id="email" name="email" placeholder="your@email.com" required>
           </div>
+          <button type="submit" class="btn-submit" id="submitBtn">Request Appointment</button>
         </div>
-
-        <button type="submit" class="btn-submit" id="submitBtn">Request Appointment</button>
       </div>
 
-      <!-- Deposit warning strip -->
+      <!-- Deposit warning -->
       <div class="deposit-warning-box">
         <div class="dw-icon">💳</div>
         <div class="dw-text">
@@ -1851,8 +1975,8 @@
       </div>
     </form>
 
+    <!-- Success screen -->
     <div class="form-success" id="formSuccess">
-      <!-- Success header -->
       <div class="success-header">
         <div class="success-check-ring">
           <svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
@@ -1862,11 +1986,8 @@
         <h3>Booking Request Sent!</h3>
         <p>Check your inbox — a confirmation email is on its way.</p>
       </div>
-
-      <!-- Success body -->
       <div class="success-body">
-        <p>Your request has been received. To <strong>lock in your appointment</strong>, send your $10 deposit now using the steps below.</p>
-
+        <p>To <strong>lock in your appointment</strong>, send your $10 deposit now.</p>
         <div class="success-deposit-card">
           <div class="success-deposit-card-header">
             <span>⚠ Action Required — Send Your Deposit</span>
@@ -1878,11 +1999,11 @@
             </div>
             <div class="success-step">
               <div class="success-step-num">2</div>
-              <p class="success-step-text">In the payment note, include your <strong>name + appointment date</strong></p>
+              <p class="success-step-text">In the note, include your <strong>name + appointment date</strong></p>
             </div>
             <div class="success-step">
               <div class="success-step-num">3</div>
-              <p class="success-step-text">Your stylist will reach out to <strong>confirm your appointment</strong> once the deposit is received</p>
+              <p class="success-step-text">Your stylist will reach out to <strong>confirm</strong> once the deposit is received</p>
             </div>
           </div>
           <div class="success-cashapp">
@@ -2198,62 +2319,249 @@
       if (e.key === 'Escape') closeLightbox();
     });
 
-    // === Booking form ===
+    // === Calendar Booking ===
+    // For real-time slot locking across ALL users (free setup, 3 min):
+    // 1. console.firebase.google.com → Add project (skip analytics)
+    // 2. Build → Realtime Database → Create database → Start in test mode → pick location
+    // 3. Copy the database URL shown (e.g. https://project-default-rtdb.firebaseio.com)
+    // 4. Paste it below replacing YOUR_FIREBASE_DB_URL
+    const FIREBASE_DB_URL = 'YOUR_FIREBASE_DB_URL';
+
+    const EARLY_FEE = 25;
+    const LATE_FEE  = 25;
+
+    const ALL_SLOTS = [
+      { t: '08:00', type: 'early' }, { t: '08:30', type: 'early' },
+      { t: '09:00', type: 'early' }, { t: '09:30', type: 'early' },
+      { t: '10:00', type: 'regular' }, { t: '10:30', type: 'regular' },
+      { t: '11:00', type: 'regular' }, { t: '11:30', type: 'regular' },
+      { t: '12:00', type: 'regular' }, { t: '12:30', type: 'regular' },
+      { t: '13:00', type: 'regular' }, { t: '13:30', type: 'regular' },
+      { t: '14:00', type: 'regular' }, { t: '14:30', type: 'regular' },
+      { t: '15:00', type: 'regular' }, { t: '15:30', type: 'regular' },
+      { t: '16:00', type: 'regular' }, { t: '16:30', type: 'regular' },
+      { t: '17:00', type: 'regular' }, { t: '17:30', type: 'regular' },
+      { t: '18:00', type: 'regular' }, { t: '18:30', type: 'regular' },
+      { t: '19:00', type: 'regular' }, { t: '19:30', type: 'regular' },
+      { t: '20:00', type: 'regular' }, { t: '20:30', type: 'regular' },
+      { t: '21:00', type: 'regular' },
+      { t: '21:30', type: 'late' },  { t: '22:00', type: 'late' },
+      { t: '22:30', type: 'late' },  { t: '23:00', type: 'late' },
+    ];
+
+    const MONTHS = ['January','February','March','April','May','June','July','August','September','October','November','December'];
+    const MONTHS_SHORT = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+    const DAYS_SHORT = ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
+
+    let calYear  = new Date().getFullYear();
+    let calMonth = new Date().getMonth();
+    let pickedDate = null;
+    let pickedTime = null;
+    let bookedCache = {};
+
+    function fmt12(t) {
+      const [h, m] = t.split(':').map(Number);
+      return `${h % 12 || 12}:${String(m).padStart(2,'0')} ${h >= 12 ? 'PM' : 'AM'}`;
+    }
+
+    function toDs(y, mo, d) {
+      return `${y}-${String(mo+1).padStart(2,'0')}-${String(d).padStart(2,'0')}`;
+    }
+
+    function renderCalendar() {
+      document.getElementById('calMonthLabel').textContent = `${MONTHS[calMonth]} ${calYear}`;
+      const grid = document.getElementById('calGrid');
+      grid.innerHTML = '';
+
+      const todayMid = new Date(); todayMid.setHours(0,0,0,0);
+      const firstWd  = new Date(calYear, calMonth, 1).getDay();
+      const daysInMo = new Date(calYear, calMonth+1, 0).getDate();
+
+      for (let i = 0; i < firstWd; i++) {
+        const e = document.createElement('div');
+        e.className = 'cal-day cal-day-empty';
+        grid.appendChild(e);
+      }
+      for (let d = 1; d <= daysInMo; d++) {
+        const ds   = toDs(calYear, calMonth, d);
+        const date = new Date(calYear, calMonth, d);
+        const past = date < todayMid;
+        const el   = document.createElement('div');
+        el.className = 'cal-day';
+        el.textContent = d;
+        if (past)                         el.classList.add('cal-day-disabled');
+        if (date.getTime() === todayMid.getTime()) el.classList.add('cal-day-today');
+        if (ds === pickedDate)             el.classList.add('cal-day-selected');
+        if (!past && bookedCache[ds] && Object.keys(bookedCache[ds]).length > 0)
+          el.classList.add('cal-day-has-booking');
+        if (!past) el.addEventListener('click', () => selectDate(ds));
+        grid.appendChild(el);
+      }
+    }
+
+    async function selectDate(ds) {
+      pickedDate = ds;
+      pickedTime = null;
+      document.getElementById('date').value = ds;
+      document.getElementById('time').value = '';
+      renderCalendar();
+      updateFooter();
+      await renderSlots(ds);
+    }
+
+    async function renderSlots(ds) {
+      const panel = document.getElementById('slotsPanel');
+      const dateLbl = document.getElementById('bshDate');
+
+      const d = new Date(ds + 'T12:00:00');
+      dateLbl.textContent = `${DAYS_SHORT[d.getDay()]}, ${MONTHS_SHORT[d.getMonth()]} ${d.getDate()}`;
+      panel.innerHTML = '<div class="slots-loading-msg">Checking availability…</div>';
+
+      let booked = {};
+      const fbOk = FIREBASE_DB_URL && !FIREBASE_DB_URL.includes('YOUR_');
+      if (fbOk) {
+        try {
+          const res = await fetch(`${FIREBASE_DB_URL}/bookings/${ds}.json`);
+          booked = (await res.json()) || {};
+        } catch(e) { booked = {}; }
+      }
+      bookedCache[ds] = booked;
+
+      const groups = [
+        { label: 'Early',   fee: `+$${EARLY_FEE}`, type: 'early',   slots: ALL_SLOTS.filter(s => s.type === 'early') },
+        { label: 'Regular', fee: 'Standard',        type: 'regular', slots: ALL_SLOTS.filter(s => s.type === 'regular') },
+        { label: 'Late',    fee: `+$${LATE_FEE}`,  type: 'late',    slots: ALL_SLOTS.filter(s => s.type === 'late') },
+      ];
+
+      panel.innerHTML = groups.map(g => `
+        <div class="slots-sep"><span>${g.label}</span><span class="slots-sep-fee">${g.fee}</span></div>
+        ${g.slots.map(s => {
+          const key      = s.t.replace(':', '-');
+          const isBooked = !!booked[key];
+          const isSel    = s.t === pickedTime;
+          return `<button type="button"
+            class="slot-btn slot-${g.type}${isBooked ? ' slot-booked' : ''}${isSel ? ' slot-selected' : ''}"
+            data-time="${s.t}" ${isBooked ? 'disabled' : ''}>
+            ${fmt12(s.t)}
+          </button>`;
+        }).join('')}
+      `).join('');
+
+      panel.querySelectorAll('.slot-btn:not(:disabled)').forEach(btn => {
+        btn.addEventListener('click', () => {
+          pickedTime = btn.dataset.time;
+          document.getElementById('time').value = pickedTime;
+          panel.querySelectorAll('.slot-btn').forEach(b => b.classList.remove('slot-selected'));
+          btn.classList.add('slot-selected');
+          updateFooter();
+          document.getElementById('contactSection').classList.add('active');
+        });
+      });
+    }
+
+    function updateFooter() {
+      const infoEl = document.getElementById('bcfInfo');
+      const textEl = document.getElementById('bcfText');
+
+      if (pickedDate && pickedTime) {
+        const d = new Date(pickedDate + 'T12:00:00');
+        const dateStr = d.toLocaleDateString('en-US', { weekday: 'long', month: 'long', day: 'numeric' });
+        infoEl.innerHTML = `
+          <div class="bcf-check">
+            <svg viewBox="0 0 12 10" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="1 5 4.5 8.5 11 1"/>
+            </svg>
+          </div>
+          <span>Appointment set for <strong>${dateStr}</strong> at <strong>${fmt12(pickedTime)}</strong></span>`;
+      } else {
+        infoEl.innerHTML = `<span id="bcfText">Select a date and time to continue.</span>`;
+      }
+    }
+
+    document.getElementById('calPrev').addEventListener('click', () => {
+      if (--calMonth < 0) { calMonth = 11; calYear--; }
+      renderCalendar();
+    });
+    document.getElementById('calNext').addEventListener('click', () => {
+      if (++calMonth > 11) { calMonth = 0; calYear++; }
+      renderCalendar();
+    });
+
+    renderCalendar();
+
+    // === Booking form submit ===
     const bookingForm = document.getElementById('bookingForm');
     const formSuccess = document.getElementById('formSuccess');
     const submitBtn   = document.getElementById('submitBtn');
 
-    // Set min date to today
-    const dateInput = document.getElementById('date');
-    const today = new Date().toISOString().split('T')[0];
-    dateInput.setAttribute('min', today);
-
-    // Phone formatting
-    const phoneInput = document.getElementById('phone');
-    phoneInput.addEventListener('input', (e) => {
-      let val = e.target.value.replace(/\D/g, '');
-      if (val.length > 10) val = val.slice(0, 10);
-      if (val.length >= 6) {
-        val = `(${val.slice(0,3)}) ${val.slice(3,6)}-${val.slice(6)}`;
-      } else if (val.length >= 3) {
-        val = `(${val.slice(0,3)}) ${val.slice(3)}`;
-      }
-      e.target.value = val;
+    document.getElementById('phone').addEventListener('input', (e) => {
+      let v = e.target.value.replace(/\D/g, '').slice(0, 10);
+      if (v.length >= 6)      v = `(${v.slice(0,3)}) ${v.slice(3,6)}-${v.slice(6)}`;
+      else if (v.length >= 3) v = `(${v.slice(0,3)}) ${v.slice(3)}`;
+      e.target.value = v;
     });
 
     bookingForm.addEventListener('submit', async (e) => {
       e.preventDefault();
 
-      submitBtn.textContent = 'Sending…';
+      if (!pickedDate) { alert('Please pick a date on the calendar.'); return; }
+      if (!pickedTime) { alert('Please select a time slot.'); return; }
+
+      submitBtn.textContent = 'Booking…';
       submitBtn.disabled = true;
 
-      const formData = new FormData(bookingForm);
+      const slotKey = pickedTime.replace(':', '-');
+      const fbOk    = FIREBASE_DB_URL && !FIREBASE_DB_URL.includes('YOUR_');
 
       try {
-        const res = await fetch('https://api.web3forms.com/submit', {
-          method: 'POST',
-          body: formData
-        });
-        const data = await res.json();
-
-        if (data.success) {
-          bookingForm.style.display = 'none';
-          formSuccess.classList.add('active');
-          setTimeout(() => {
-            formSuccess.classList.remove('active');
-            bookingForm.style.display = 'block';
-            bookingForm.reset();
+        if (fbOk) {
+          const check = await fetch(`${FIREBASE_DB_URL}/bookings/${pickedDate}/${slotKey}.json`);
+          const taken = await check.json();
+          if (taken) {
+            alert('That time was just taken — please pick another slot.');
+            await renderSlots(pickedDate);
             submitBtn.textContent = 'Request Appointment';
             submitBtn.disabled = false;
-          }, 10000);
-        } else {
-          throw new Error(data.message);
+            return;
+          }
+          const nm = document.getElementById('name').value.trim();
+          await fetch(`${FIREBASE_DB_URL}/bookings/${pickedDate}/${slotKey}.json`, {
+            method: 'PUT',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ name: nm, bookedAt: new Date().toISOString() })
+          });
         }
-      } catch (err) {
+
+        const formData = new FormData(bookingForm);
+        const res  = await fetch('https://api.web3forms.com/submit', { method: 'POST', body: formData });
+        const data = await res.json();
+        if (!data.success) throw new Error(data.message);
+
+        bookingForm.style.display = 'none';
+        formSuccess.classList.add('active');
+
+        setTimeout(() => {
+          formSuccess.classList.remove('active');
+          bookingForm.style.display = 'block';
+          bookingForm.reset();
+          pickedDate = null; pickedTime = null;
+          document.getElementById('contactSection').classList.remove('active');
+          document.getElementById('slotsPanel').innerHTML = '<div class="slots-empty-msg">← Pick a date to see available times</div>';
+          document.getElementById('bshDate').textContent = 'Select a date';
+          updateFooter();
+          renderCalendar();
+          submitBtn.textContent = 'Request Appointment';
+          submitBtn.disabled = false;
+        }, 10000);
+
+      } catch(err) {
         console.error('Booking error:', err);
+        if (fbOk) {
+          fetch(`${FIREBASE_DB_URL}/bookings/${pickedDate}/${slotKey}.json`, { method: 'DELETE' }).catch(()=>{});
+        }
         submitBtn.textContent = 'Request Appointment';
         submitBtn.disabled = false;
-        alert('There was an issue sending your booking. Please try again or DM us directly.');
+        alert('Something went wrong. Please try again or DM us directly.');
       }
     });
 
