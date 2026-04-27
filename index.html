@@ -8,7 +8,6 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
-  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
   <style>
     /* ===== RESET & BASE ===== */
     *, *::before, *::after {
@@ -1550,6 +1549,12 @@
     <div class="section-divider reveal"></div>
 
     <form class="booking-form reveal" id="bookingForm">
+      <!-- Web3Forms hidden config -->
+      <input type="hidden" name="access_key" value="PASTE_YOUR_KEY_HERE">
+      <input type="hidden" name="subject" value="New Booking Request — StylezByZP">
+      <input type="hidden" name="from_name" value="StylezByZP Booking System">
+      <input type="hidden" name="botcheck" style="display:none;">
+
       <div class="form-group">
         <label for="name">Full Name</label>
         <input type="text" id="name" name="name" placeholder="Your name" required>
@@ -1936,18 +1941,6 @@
       if (e.key === 'Escape') closeLightbox();
     });
 
-    // === EmailJS Configuration ===
-    // SETUP (2 min): https://emailjs.com
-    // 1. Create free account → Add Email Service (Gmail or iCloud)
-    // 2. Create Template 1 (owner): To = zhamiaperkins@icloud.com, Subject = "New Booking: {{client_name}}", Body (HTML on) = {{{message_html}}}
-    // 3. Create Template 2 (customer): To = {{to_email}}, Subject = "Your Booking Request — StylezByZP", Body (HTML on) = {{{message_html}}}
-    // 4. Replace the three placeholder values below with your real IDs from the EmailJS dashboard
-    emailjs.init('YOUR_PUBLIC_KEY');
-    const EJS_SERVICE   = 'YOUR_SERVICE_ID';
-    const EJS_OWNER_TPL = 'YOUR_OWNER_TEMPLATE_ID';
-    const EJS_CUST_TPL  = 'YOUR_CUSTOMER_TEMPLATE_ID';
-    const OWNER_EMAIL   = 'zhamiaperkins@icloud.com';
-
     // === Booking form ===
     const bookingForm = document.getElementById('bookingForm');
     const formSuccess = document.getElementById('formSuccess');
@@ -1974,175 +1967,33 @@
     bookingForm.addEventListener('submit', async (e) => {
       e.preventDefault();
 
-      const name    = document.getElementById('name').value.trim();
-      const phone   = document.getElementById('phone').value.trim();
-      const email   = document.getElementById('email').value.trim();
-      const service = document.getElementById('service').value;
-      const date    = document.getElementById('date').value;
-      const time    = document.getElementById('time').value;
-
-      const fDate = new Date(date + 'T12:00:00').toLocaleDateString('en-US', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' });
-      const fTime = new Date(`2000-01-01T${time}`).toLocaleTimeString('en-US', { hour: 'numeric', minute: '2-digit', hour12: true });
-
       submitBtn.textContent = 'Sending…';
       submitBtn.disabled = true;
 
-      // ── OWNER EMAIL ──────────────────────────────────────────────────────────
-      const ownerHtml = `
-<div style="margin:0;padding:0;background:#FAF6F1;font-family:Georgia,serif;">
-  <div style="max-width:600px;margin:0 auto;background:#ffffff;border:1px solid #E8D5C4;">
-
-    <!-- Header -->
-    <div style="background:linear-gradient(135deg,#5C4033 0%,#3D2B1F 100%);padding:36px 40px;text-align:center;">
-      <p style="margin:0 0 6px;font-family:'Helvetica Neue',sans-serif;font-size:11px;font-weight:600;letter-spacing:4px;text-transform:uppercase;color:#D4A574;">StylezByZP</p>
-      <h1 style="margin:0;font-family:Georgia,serif;font-size:26px;font-weight:400;color:#FFFDF9;line-height:1.3;">New Booking Request</h1>
-    </div>
-
-    <!-- Alert bar -->
-    <div style="background:#B8866B;padding:12px 40px;text-align:center;">
-      <p style="margin:0;font-family:'Helvetica Neue',sans-serif;font-size:11px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:#FFFDF9;">Action Required — Review &amp; Confirm</p>
-    </div>
-
-    <!-- Body -->
-    <div style="padding:40px;">
-      <p style="margin:0 0 28px;font-family:'Helvetica Neue',sans-serif;font-size:14px;color:#8B7355;line-height:1.7;">Hey Zhamia! You have a new appointment request. Here are the details:</p>
-
-      <!-- Details table -->
-      <table style="width:100%;border-collapse:collapse;margin-bottom:32px;">
-        <tr style="border-bottom:1px solid #E8D5C4;">
-          <td style="padding:14px 0;font-family:'Helvetica Neue',sans-serif;font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#B8866B;width:38%;">Client Name</td>
-          <td style="padding:14px 0;font-family:Georgia,serif;font-size:16px;color:#5C4033;font-weight:400;">${name}</td>
-        </tr>
-        <tr style="border-bottom:1px solid #E8D5C4;">
-          <td style="padding:14px 0;font-family:'Helvetica Neue',sans-serif;font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#B8866B;">Phone</td>
-          <td style="padding:14px 0;font-family:Georgia,serif;font-size:16px;color:#5C4033;">${phone}</td>
-        </tr>
-        <tr style="border-bottom:1px solid #E8D5C4;">
-          <td style="padding:14px 0;font-family:'Helvetica Neue',sans-serif;font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#B8866B;">Email</td>
-          <td style="padding:14px 0;font-family:Georgia,serif;font-size:16px;color:#5C4033;">${email}</td>
-        </tr>
-        <tr style="border-bottom:1px solid #E8D5C4;">
-          <td style="padding:14px 0;font-family:'Helvetica Neue',sans-serif;font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#B8866B;">Service</td>
-          <td style="padding:14px 0;font-family:Georgia,serif;font-size:16px;color:#5C4033;">${service}</td>
-        </tr>
-        <tr style="border-bottom:1px solid #E8D5C4;">
-          <td style="padding:14px 0;font-family:'Helvetica Neue',sans-serif;font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#B8866B;">Date</td>
-          <td style="padding:14px 0;font-family:Georgia,serif;font-size:16px;color:#5C4033;">${fDate}</td>
-        </tr>
-        <tr>
-          <td style="padding:14px 0;font-family:'Helvetica Neue',sans-serif;font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#B8866B;">Time</td>
-          <td style="padding:14px 0;font-family:Georgia,serif;font-size:16px;color:#5C4033;">${fTime}</td>
-        </tr>
-      </table>
-
-      <!-- Deposit reminder -->
-      <div style="background:#FFF8F4;border:1.5px solid #B8866B;border-radius:4px;padding:20px 24px;margin-bottom:32px;">
-        <p style="margin:0 0 8px;font-family:'Helvetica Neue',sans-serif;font-size:11px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:#B8866B;">Deposit Status</p>
-        <p style="margin:0;font-family:'Helvetica Neue',sans-serif;font-size:14px;color:#5C4033;line-height:1.6;">This appointment is <strong>pending</strong> until you receive and confirm the $10 deposit from the client. Once received, reach out to the client to finalize their appointment.</p>
-      </div>
-
-      <p style="margin:0;font-family:'Helvetica Neue',sans-serif;font-size:13px;color:#8B7355;line-height:1.7;font-style:italic;">This is an automated notification from your StylezByZP booking system.</p>
-    </div>
-
-    <!-- Footer -->
-    <div style="background:#F5EDE4;padding:20px 40px;text-align:center;border-top:1px solid #E8D5C4;">
-      <p style="margin:0;font-family:'Helvetica Neue',sans-serif;font-size:11px;color:#B8866B;letter-spacing:2px;text-transform:uppercase;">StylezByZP &nbsp;·&nbsp; Premium Hair Styling</p>
-    </div>
-
-  </div>
-</div>`;
-
-      // ── CUSTOMER CONFIRMATION EMAIL ───────────────────────────────────────────
-      const customerHtml = `
-<div style="margin:0;padding:0;background:#FAF6F1;font-family:Georgia,serif;">
-  <div style="max-width:600px;margin:0 auto;background:#ffffff;border:1px solid #E8D5C4;">
-
-    <!-- Header -->
-    <div style="background:linear-gradient(135deg,#5C4033 0%,#3D2B1F 100%);padding:36px 40px;text-align:center;">
-      <p style="margin:0 0 6px;font-family:'Helvetica Neue',sans-serif;font-size:11px;font-weight:600;letter-spacing:4px;text-transform:uppercase;color:#D4A574;">StylezByZP</p>
-      <h1 style="margin:0;font-family:Georgia,serif;font-size:26px;font-weight:400;color:#FFFDF9;line-height:1.3;">Booking Request Received!</h1>
-    </div>
-
-    <!-- Body -->
-    <div style="padding:40px;">
-      <p style="margin:0 0 20px;font-family:'Helvetica Neue',sans-serif;font-size:15px;color:#5C4033;line-height:1.7;">Hi <strong>${name}</strong>,</p>
-      <p style="margin:0 0 28px;font-family:'Helvetica Neue',sans-serif;font-size:14px;color:#8B7355;line-height:1.8;">Thank you for booking with StylezByZP! Your request has been received. Here's a summary of what you booked:</p>
-
-      <!-- Booking summary -->
-      <div style="background:#F5EDE4;border-radius:4px;padding:24px 28px;margin-bottom:32px;">
-        <p style="margin:0 0 14px;font-family:'Helvetica Neue',sans-serif;font-size:11px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:#B8866B;">Your Booking Summary</p>
-        <table style="width:100%;border-collapse:collapse;">
-          <tr>
-            <td style="padding:8px 0;font-family:'Helvetica Neue',sans-serif;font-size:12px;font-weight:600;color:#8B7355;width:35%;">Service</td>
-            <td style="padding:8px 0;font-family:'Helvetica Neue',sans-serif;font-size:14px;color:#5C4033;">${service}</td>
-          </tr>
-          <tr>
-            <td style="padding:8px 0;font-family:'Helvetica Neue',sans-serif;font-size:12px;font-weight:600;color:#8B7355;">Date</td>
-            <td style="padding:8px 0;font-family:'Helvetica Neue',sans-serif;font-size:14px;color:#5C4033;">${fDate}</td>
-          </tr>
-          <tr>
-            <td style="padding:8px 0;font-family:'Helvetica Neue',sans-serif;font-size:12px;font-weight:600;color:#8B7355;">Time</td>
-            <td style="padding:8px 0;font-family:'Helvetica Neue',sans-serif;font-size:14px;color:#5C4033;">${fTime}</td>
-          </tr>
-        </table>
-      </div>
-
-      <!-- Deposit warning — prominent -->
-      <div style="background:#FFF8F4;border:2px solid #B8866B;border-radius:4px;padding:24px 28px;margin-bottom:32px;">
-        <p style="margin:0 0 10px;font-family:'Helvetica Neue',sans-serif;font-size:13px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#B8866B;">⚠️ Action Required — Send Your Deposit</p>
-        <p style="margin:0 0 16px;font-family:'Helvetica Neue',sans-serif;font-size:14px;color:#5C4033;line-height:1.8;"><strong>Your appointment is NOT confirmed until your $10 deposit is received.</strong> Please send your deposit as soon as possible to lock in your spot.</p>
-        <div style="background:#ffffff;border:1px solid #E8D5C4;border-radius:3px;padding:16px 20px;">
-          <p style="margin:0 0 8px;font-family:'Helvetica Neue',sans-serif;font-size:12px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:#5C4033;">How to Send Your Deposit:</p>
-          <p style="margin:0 0 6px;font-family:'Helvetica Neue',sans-serif;font-size:14px;color:#5C4033;">💸 CashApp: <strong>$StylezByZP</strong></p>
-          <p style="margin:0;font-family:'Helvetica Neue',sans-serif;font-size:13px;color:#8B7355;">In the note, include your <strong>name + appointment date</strong></p>
-        </div>
-      </div>
-
-      <p style="margin:0 0 8px;font-family:'Helvetica Neue',sans-serif;font-size:14px;color:#8B7355;line-height:1.8;">Once your deposit is received, your stylist will reach out to confirm your appointment. If you have any questions, just reply to this email.</p>
-      <p style="margin:0;font-family:'Helvetica Neue',sans-serif;font-size:14px;color:#8B7355;line-height:1.8;">Can't wait to make you look amazing! ✨</p>
-      <p style="margin:24px 0 0;font-family:Georgia,serif;font-size:18px;font-style:italic;color:#B8866B;">— StylezByZP</p>
-    </div>
-
-    <!-- Warning footer bar -->
-    <div style="background:#5C4033;padding:16px 40px;text-align:center;">
-      <p style="margin:0;font-family:'Helvetica Neue',sans-serif;font-size:12px;font-weight:600;color:#D4A574;letter-spacing:1px;">Appointment not confirmed without deposit · $10 required</p>
-    </div>
-
-    <!-- Footer -->
-    <div style="background:#F5EDE4;padding:20px 40px;text-align:center;border-top:1px solid #E8D5C4;">
-      <p style="margin:0;font-family:'Helvetica Neue',sans-serif;font-size:11px;color:#B8866B;letter-spacing:2px;text-transform:uppercase;">StylezByZP &nbsp;·&nbsp; Premium Hair Styling</p>
-    </div>
-
-  </div>
-</div>`;
+      const formData = new FormData(bookingForm);
 
       try {
-        await Promise.all([
-          emailjs.send(EJS_SERVICE, EJS_OWNER_TPL, {
-            to_email:    OWNER_EMAIL,
-            client_name: name,
-            message_html: ownerHtml
-          }),
-          emailjs.send(EJS_SERVICE, EJS_CUST_TPL, {
-            to_email:    email,
-            client_name: name,
-            message_html: customerHtml
-          })
-        ]);
+        const res = await fetch('https://api.web3forms.com/submit', {
+          method: 'POST',
+          body: formData
+        });
+        const data = await res.json();
 
-        bookingForm.style.display = 'none';
-        formSuccess.classList.add('active');
-
-        setTimeout(() => {
-          formSuccess.classList.remove('active');
-          bookingForm.style.display = 'block';
-          bookingForm.reset();
-          submitBtn.textContent = 'Request Appointment';
-          submitBtn.disabled = false;
-        }, 10000);
-
+        if (data.success) {
+          bookingForm.style.display = 'none';
+          formSuccess.classList.add('active');
+          setTimeout(() => {
+            formSuccess.classList.remove('active');
+            bookingForm.style.display = 'block';
+            bookingForm.reset();
+            submitBtn.textContent = 'Request Appointment';
+            submitBtn.disabled = false;
+          }, 10000);
+        } else {
+          throw new Error(data.message);
+        }
       } catch (err) {
-        console.error('EmailJS error:', err);
+        console.error('Booking error:', err);
         submitBtn.textContent = 'Request Appointment';
         submitBtn.disabled = false;
         alert('There was an issue sending your booking. Please try again or DM us directly.');
